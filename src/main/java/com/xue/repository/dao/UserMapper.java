@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface UserMapperDao {
+public interface UserMapper {
     long countByExample(UserExample example);
 
     int deleteByExample(UserExample example);

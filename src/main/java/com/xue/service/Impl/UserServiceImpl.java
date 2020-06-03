@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.xue.repository.dao.UserMapperDao;
+import com.xue.repository.dao.UserMapper;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -22,7 +22,7 @@ import com.xue.transcation.MyException;
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	private UserMapperDao userMapper;
+	private UserMapper userMapper;
 
 	@Override
 	public int addUser(MultipartFile file) throws Exception{
