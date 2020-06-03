@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: "0000"
+    password: "00000000"
     url: jdbc:mysql://127.0.0.1:3306/springimport_excel?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useSSL=false
       &serverTimezone=UTC&allowPublicKeyRetrieval=true
     hikari:
