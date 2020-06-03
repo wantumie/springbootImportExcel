@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.xue.repository.dao")
+//@MapperScan("com.xue.repository.dao")
 public class SpringbootImportExcelApplication {
 
 	public static void main(String[] args) {

@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.xue.repository.dao.UserMapperDao;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -15,14 +16,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.xue.entity.model.User;
-import com.xue.repository.dao.UserMapper;
 import com.xue.service.UserService;
 import com.xue.transcation.MyException;
 @Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	private UserMapper userMapper;
+	private UserMapperDao userMapper;
 
 	@Override
 	public int addUser(MultipartFile file) throws Exception{
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 		
 		if(null != sheet){
 			
-			for(int line = 2; line <= sheet.getLastRowNum();line++){
+			for(int line = 1; line <= sheet.getLastRowNum();line++){
 				
 				User user = new User();
 				
@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
 				String name = userInfo.getUsername();
 				
 				int count = userMapper.selectUser(name);
-				
+
 				if(0 == count){			
 					result = userMapper.addUser(userInfo);
 				}else{
